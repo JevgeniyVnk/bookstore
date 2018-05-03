@@ -11,6 +11,8 @@ namespace bookstore
     {
         public string Name { get; set; }
         public double Price { get; set; }
+        public string Author { get; set; }
+        public string ImgPath { get; set; }
         public Book(string name, double price)
         {
             Name = name;

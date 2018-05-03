@@ -19,5 +19,10 @@ namespace bookstore
         {
             _dataset.ReadXml(dbpath);
         }
+
+        public DataSet GetDataSet()
+        {
+            return _dataset;
+        }
     }
 }

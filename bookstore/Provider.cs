@@ -16,13 +16,18 @@ namespace bookstore
         }
 
         /// <summary>
-        ///асинхронно подрубается к базе
+        ///асинхронно считывает инфу из базы
         /// </summary>
         /// <returns></returns>
   
         public async Task ReadDbData(string login, string password, string bdpath)
         {
             await Task.Run(() => _storage.ReadDB(bdpath));
+        }
+
+        public DataSet GetDataSet()
+        {
+            return _storage.GetDataSet();
         }
 
         public async Task WriteDbData(/*тут чето будет*/)
