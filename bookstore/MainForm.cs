@@ -10,11 +10,22 @@ using System.Windows.Forms;
 
 namespace bookstore
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        DataTable _dataSet;
+        public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Logout_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
