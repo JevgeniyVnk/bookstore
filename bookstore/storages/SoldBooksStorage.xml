@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Storage>
+  <!--id = Date().now или как то так-->
+  <Book name ="test" price="test" count ="1" />
+  <Book name ="test" price="test" count ="1" />
+  <Book name ="test" price="test" count ="1" />
+  <Book name ="test" price="test" count ="1" />
+  <Book name ="test" price="test" count ="1" />
+
+  <Book name ="test" price="test" count ="1" />
+  <Book name ="test" price="test" count ="1" />
+  <Book name ="test" price="test" count ="1" />
+  <Book name ="test" price="test" count ="1" />
+  <Book name ="test" price="test" count ="1" />
+</Storage>

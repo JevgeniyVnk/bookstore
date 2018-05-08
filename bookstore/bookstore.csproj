@@ -34,6 +34,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,12 +55,19 @@
     <Compile Include="FormAddBookInfo.Designer.cs">
       <DependentUpon>FormAddBookInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBookInfo.cs">
+    <Compile Include="OrderBooks.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBookInfo.Designer.cs">
-      <DependentUpon>FormBookInfo.cs</DependentUpon>
+    <Compile Include="OrderBooks.Designer.cs">
+      <DependentUpon>OrderBooks.cs</DependentUpon>
     </Compile>
+    <Compile Include="StatisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatisticsForm.Designer.cs">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsersHelper.cs" />
     <Compile Include="Provider.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -71,11 +81,11 @@
     <EmbeddedResource Include="FormAddBookInfo.resx">
       <DependentUpon>FormAddBookInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBookInfo.resx">
-      <DependentUpon>FormBookInfo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderBooks.resx">
+      <DependentUpon>OrderBooks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -86,6 +96,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StatisticsForm.resx">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -100,7 +114,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="storages\BooksStorage.xml" />
+    <Content Include="storages\BooksStorage.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="storages\SoldBooksStorage.xml" />
+    <Content Include="storages\ToOrderStorage.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

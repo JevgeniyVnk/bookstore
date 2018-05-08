@@ -1,8 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Storage>
-  <Category>
-    <Book name ="test" price="test">
-      
-    </Book>
-  </Category>
+    <Book name ="test" price="test" count ="1" />
+    <Book name ="test" price="test" count ="1" />
+    <Book name ="test" price="test" count ="1" />
+    <Book name ="test" price="test" count ="1" />
+    <Book name ="test" price="test" count ="1" />
+
+    <Book name ="test" price="test" count ="1" />
+    <Book name ="test" price="test" count ="1" />
+    <Book name ="test" price="test" count ="1" />
+    <Book name ="test" price="test" count ="1" />
+    <Book name ="test" price="test" count ="1" />
 </Storage>

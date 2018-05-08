@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace bookstore
 {
-    public partial class FormBookInfo : Form
+    public partial class OrderBooks : Form
     {
-        public FormBookInfo()
+        public OrderBooks()
         {
             InitializeComponent();
         }
