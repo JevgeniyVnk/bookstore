@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Xml.Serialization;
 namespace bookstore
 {
     
     class Provider
     {
-        private Storage _storage;
         private List<Book> _books;
+        private Storage _storage;
 
         public Book GetBook(int index) => index >= 0 && index < _books.Count ? _books[index] : null;
 
@@ -58,10 +59,9 @@ namespace bookstore
             return _storage.GetDataSet();
         }
 
-        public async Task WriteDbData(/*тут чето будет*/)
+        public async Task WriteDbData(string dbpath)
         {
-            //TODO асинхронно обновить xml согласно списку книг
-            //await Task.Run(() =>)
+            await Task.Run(() => _storage.WriteDb(_books, dbpath));
         }
     }
 }
