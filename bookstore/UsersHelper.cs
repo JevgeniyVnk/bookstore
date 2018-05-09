@@ -9,7 +9,7 @@ namespace bookstore
     public class UsersHelper
     {
 
-        public static List<(string name, string password)> admins =
+        public static List<(string name, string password)> _admins =
             new List<(string name, string password)>
             {
                 ("admin", "admin"),
@@ -17,7 +17,7 @@ namespace bookstore
                 ("Jenya", "Jenya")
             };
 
-        public static List<(string name, string password)> users =
+        public static List<(string name, string password)> _users =
             new List<(string name, string password)>
         {
                 ("TyotaZina", "123123"),
@@ -25,7 +25,8 @@ namespace bookstore
                 ("Petya", "qwerty")
         };
 
-        public static bool IsAdmin(string name, string pass) => admins.Contains((name, pass));
+        public static bool IsAdmin(string name, string pass) => _admins.Contains((name, pass));
+        public static bool IsUser(string name, string pass) => _users.Contains((name, pass));
         public static bool IsLogged { get; set; } = false;
     }
 }

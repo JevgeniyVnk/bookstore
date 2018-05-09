@@ -37,14 +37,14 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(40, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(32, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(308, 358);
+            this.dataGridView1.Size = new System.Drawing.Size(316, 358);
             this.dataGridView1.TabIndex = 0;
             // 
             // btn_MakeReport
             // 
-            this.btn_MakeReport.Location = new System.Drawing.Point(40, 393);
+            this.btn_MakeReport.Location = new System.Drawing.Point(34, 393);
             this.btn_MakeReport.Name = "btn_MakeReport";
             this.btn_MakeReport.Size = new System.Drawing.Size(143, 23);
             this.btn_MakeReport.TabIndex = 1;

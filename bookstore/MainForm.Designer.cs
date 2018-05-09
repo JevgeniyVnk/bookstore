@@ -39,16 +39,20 @@
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.tb_SearchBook = new System.Windows.Forms.TextBox();
             this.lbl_Search = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.panelDescribtion = new System.Windows.Forms.Panel();
+            this.lbl_Describtion = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ts_OrderBooks = new System.Windows.Forms.ToolStripMenuItem();
             this.ts_SellBooks = new System.Windows.Forms.ToolStripMenuItem();
             this.ts_Statistics = new System.Windows.Forms.ToolStripMenuItem();
             this.ts_ChangeDb = new System.Windows.Forms.ToolStripMenuItem();
+            this.ts_UpdateDb = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsItem_UpdateBooks = new System.Windows.Forms.ToolStripMenuItem();
+            this.базаПроданныхКнигToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.базаДляЗаказчикаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Search = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panelDescribtion.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +64,7 @@
             this.dataGridView.Size = new System.Drawing.Size(398, 408);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
+            this.dataGridView.Leave += new System.EventHandler(this.dataGridView_Leave);
             // 
             // openFileDialog1
             // 
@@ -82,7 +87,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(319, 423);
+            this.btnLogin.Location = new System.Drawing.Point(236, 423);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 3;
@@ -110,7 +115,7 @@
             // 
             // btn_Logout
             // 
-            this.btn_Logout.Location = new System.Drawing.Point(236, 423);
+            this.btn_Logout.Location = new System.Drawing.Point(317, 423);
             this.btn_Logout.Name = "btn_Logout";
             this.btn_Logout.Size = new System.Drawing.Size(75, 23);
             this.btn_Logout.TabIndex = 6;
@@ -130,34 +135,35 @@
             // 
             this.tb_SearchBook.Location = new System.Drawing.Point(9, 58);
             this.tb_SearchBook.Name = "tb_SearchBook";
-            this.tb_SearchBook.Size = new System.Drawing.Size(267, 20);
+            this.tb_SearchBook.Size = new System.Drawing.Size(265, 20);
             this.tb_SearchBook.TabIndex = 8;
             // 
             // lbl_Search
             // 
             this.lbl_Search.AutoSize = true;
-            this.lbl_Search.Location = new System.Drawing.Point(6, 42);
+            this.lbl_Search.Location = new System.Drawing.Point(6, 40);
             this.lbl_Search.Name = "lbl_Search";
             this.lbl_Search.Size = new System.Drawing.Size(107, 13);
             this.lbl_Search.TabIndex = 9;
             this.lbl_Search.Text = "Поиск книги в базе";
             // 
-            // panel1
+            // panelDescribtion
             // 
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(12, 94);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(369, 304);
-            this.panel1.TabIndex = 10;
+            this.panelDescribtion.BackColor = System.Drawing.SystemColors.Info;
+            this.panelDescribtion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelDescribtion.Controls.Add(this.lbl_Describtion);
+            this.panelDescribtion.Location = new System.Drawing.Point(12, 94);
+            this.panelDescribtion.Name = "panelDescribtion";
+            this.panelDescribtion.Size = new System.Drawing.Size(369, 292);
+            this.panelDescribtion.TabIndex = 10;
             // 
-            // label3
+            // lbl_Describtion
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(80, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(199, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Инфа(картинка) по книге будет здесь";
+            this.lbl_Describtion.AutoSize = true;
+            this.lbl_Describtion.Location = new System.Drawing.Point(19, 9);
+            this.lbl_Describtion.Name = "lbl_Describtion";
+            this.lbl_Describtion.Size = new System.Drawing.Size(0, 13);
+            this.lbl_Describtion.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -165,7 +171,8 @@
             this.ts_OrderBooks,
             this.ts_SellBooks,
             this.ts_Statistics,
-            this.ts_ChangeDb});
+            this.ts_ChangeDb,
+            this.ts_UpdateDb});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -199,9 +206,39 @@
             this.ts_ChangeDb.Size = new System.Drawing.Size(114, 20);
             this.ts_ChangeDb.Text = "Смена бд(админ)";
             // 
+            // ts_UpdateDb
+            // 
+            this.ts_UpdateDb.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsItem_UpdateBooks,
+            this.базаПроданныхКнигToolStripMenuItem,
+            this.базаДляЗаказчикаToolStripMenuItem});
+            this.ts_UpdateDb.Name = "ts_UpdateDb";
+            this.ts_UpdateDb.Size = new System.Drawing.Size(100, 20);
+            this.ts_UpdateDb.Text = "Обновить базу";
+            this.ts_UpdateDb.Click += new System.EventHandler(this.ts_UpdateDb_Click);
+            // 
+            // tsItem_UpdateBooks
+            // 
+            this.tsItem_UpdateBooks.Name = "tsItem_UpdateBooks";
+            this.tsItem_UpdateBooks.Size = new System.Drawing.Size(190, 22);
+            this.tsItem_UpdateBooks.Text = "База магазина";
+            this.tsItem_UpdateBooks.Click += new System.EventHandler(this.tsItem_UpdateBooks_Click);
+            // 
+            // базаПроданныхКнигToolStripMenuItem
+            // 
+            this.базаПроданныхКнигToolStripMenuItem.Name = "базаПроданныхКнигToolStripMenuItem";
+            this.базаПроданныхКнигToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.базаПроданныхКнигToolStripMenuItem.Text = "База проданных книг";
+            // 
+            // базаДляЗаказчикаToolStripMenuItem
+            // 
+            this.базаДляЗаказчикаToolStripMenuItem.Name = "базаДляЗаказчикаToolStripMenuItem";
+            this.базаДляЗаказчикаToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.базаДляЗаказчикаToolStripMenuItem.Text = "База для заказчика";
+            // 
             // btn_Search
             // 
-            this.btn_Search.Location = new System.Drawing.Point(306, 55);
+            this.btn_Search.Location = new System.Drawing.Point(306, 56);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(75, 23);
             this.btn_Search.TabIndex = 12;
@@ -215,11 +252,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btn_Search);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btn_Logout);
+            this.Controls.Add(this.panelDescribtion);
             this.Controls.Add(this.lbl_Search);
             this.Controls.Add(this.tb_SearchBook);
             this.Controls.Add(this.progressBar);
-            this.Controls.Add(this.btn_Logout);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogin);
@@ -231,8 +268,8 @@
             this.Name = "MainForm";
             this.Text = "Главная форма(временно)";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelDescribtion.ResumeLayout(false);
+            this.panelDescribtion.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -253,14 +290,18 @@
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.TextBox tb_SearchBook;
         private System.Windows.Forms.Label lbl_Search;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panelDescribtion;
+        private System.Windows.Forms.Label lbl_Describtion;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ts_OrderBooks;
         private System.Windows.Forms.ToolStripMenuItem ts_SellBooks;
         private System.Windows.Forms.ToolStripMenuItem ts_Statistics;
         private System.Windows.Forms.ToolStripMenuItem ts_ChangeDb;
         private System.Windows.Forms.Button btn_Search;
+        private System.Windows.Forms.ToolStripMenuItem ts_UpdateDb;
+        private System.Windows.Forms.ToolStripMenuItem tsItem_UpdateBooks;
+        private System.Windows.Forms.ToolStripMenuItem базаПроданныхКнигToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem базаДляЗаказчикаToolStripMenuItem;
     }
 }
 
