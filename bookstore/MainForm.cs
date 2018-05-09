@@ -29,7 +29,7 @@ namespace bookstore
             try
             {
                 //TODO хранить где нибудь залониненного пользователя
-                if (!UsersHelper.IsAdmin(tbName.Text, tbPassword.Text) ||
+                if (!UsersHelper.IsAdmin(tbName.Text, tbPassword.Text) &&
                     !UsersHelper.IsUser(tbName.Text, tbPassword.Text))
                 {
                     MessageBox.Show("Не удалось авторизоваться");
@@ -142,9 +142,19 @@ namespace bookstore
             //можно выпилить в принципе
         }
 
+        private async Task tsItem_UpdateBooks_ClickTask(object sender, EventArgs e)
+        {
+            await _provider.WriteDbData(Application.StartupPath + @"\storages\BooksStorage.xml");
+        }
+
         private void tsItem_UpdateBooks_Click(object sender, EventArgs e)
         {
-            //выбор бд, которую хотим засейвить и сейв через провайдер
+            Task.Run(() => tsItem_UpdateBooks_ClickTask(sender, e));
+        }
+
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

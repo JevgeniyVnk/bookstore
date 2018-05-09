@@ -64,6 +64,7 @@
             this.dataGridView.Size = new System.Drawing.Size(398, 408);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
+            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
             this.dataGridView.Leave += new System.EventHandler(this.dataGridView_Leave);
             // 
             // openFileDialog1
