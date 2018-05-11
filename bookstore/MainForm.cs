@@ -23,7 +23,7 @@ namespace bookstore
             btn_Logout.Enabled = false;
         }
 
-        private async Task LoginAsync(IProgress<int> progress)
+        private async Task<bool> LoginAsync(IProgress<int> progress)
         {
             progress?.Report(0);
             try
@@ -33,12 +33,8 @@ namespace bookstore
                     !UsersHelper.IsUser(tbName.Text, tbPassword.Text))
                 {
                     MessageBox.Show("Не удалось авторизоваться");
-                    return;
                 }
-                btnLogin.BeginInvoke((MethodInvoker)(() =>
-                {
-                    btnLogin.Enabled = false;
-                }));
+
                 string pathToDb = Application.StartupPath + @"\storages\BooksStorage.xml";
                 await _provider.ReadDbData(tbName.Text, tbPassword.Text, pathToDb);
                 DataSet dataset = _provider.GetDataSet();
@@ -49,6 +45,7 @@ namespace bookstore
                     dataGridView.Update();
                     UsersHelper.IsLogged = true;
                 }));
+
             }
             catch(Exception e)
             {
@@ -58,6 +55,7 @@ namespace bookstore
             { 
                 progress.Report(100);
             }
+            return true;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -67,7 +65,15 @@ namespace bookstore
                 progressBar.Value = value;
             });
 
-            Task.Run(async () => await LoginAsync(progress));
+
+
+            Task<bool> login = Task.Run(async () => await LoginAsync(progress));
+            login.Wait();
+            if (login.Result)
+            {
+                btnLogin.Enabled = false;
+                btn_Logout.Enabled = true;
+            }
         }
 
         private void btn_Logout_Click(object sender, EventArgs e)
