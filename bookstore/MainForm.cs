@@ -35,7 +35,10 @@ namespace bookstore
                     MessageBox.Show("Не удалось авторизоваться");
                     return;
                 }
-                btnLogin.Enabled = false;
+                btnLogin.BeginInvoke((MethodInvoker)(() =>
+                {
+                    btnLogin.Enabled = false;
+                }));
                 string pathToDb = Application.StartupPath + @"\storages\BooksStorage.xml";
                 await _provider.ReadDbData(tbName.Text, tbPassword.Text, pathToDb);
                 DataSet dataset = _provider.GetDataSet();
