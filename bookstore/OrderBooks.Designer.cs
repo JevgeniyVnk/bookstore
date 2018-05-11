@@ -28,126 +28,197 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_Order = new System.Windows.Forms.Button();
-            this.btn_Cancel = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderBooks));
+            this.navigationMenu = new System.Windows.Forms.MenuStrip();
+            this.наГлавнуюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.продажаКнигToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.статистикаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toExcelBtTool = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toExcelItTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.orderPostBtTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderBtTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.addBtTool = new System.Windows.Forms.ToolStripButton();
+            this.deleteBtTool = new System.Windows.Forms.ToolStripButton();
+            this.currentListLbTool = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.orderList = new System.Windows.Forms.DataGridView();
+            this.navigationMenu.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderList)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_Order
+            // navigationMenu
             // 
-            this.btn_Order.Location = new System.Drawing.Point(565, 392);
-            this.btn_Order.Name = "btn_Order";
-            this.btn_Order.Size = new System.Drawing.Size(75, 23);
-            this.btn_Order.TabIndex = 0;
-            this.btn_Order.Text = "Заказать";
-            this.btn_Order.UseVisualStyleBackColor = true;
+            this.navigationMenu.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.navigationMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.наГлавнуюToolStripMenuItem,
+            this.продажаКнигToolStripMenuItem,
+            this.статистикаToolStripMenuItem});
+            this.navigationMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.navigationMenu.Location = new System.Drawing.Point(0, 0);
+            this.navigationMenu.Name = "navigationMenu";
+            this.navigationMenu.Size = new System.Drawing.Size(800, 24);
+            this.navigationMenu.TabIndex = 0;
+            this.navigationMenu.Text = "menuStrip1";
             // 
-            // btn_Cancel
+            // наГлавнуюToolStripMenuItem
             // 
-            this.btn_Cancel.Location = new System.Drawing.Point(671, 392);
-            this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(75, 23);
-            this.btn_Cancel.TabIndex = 1;
-            this.btn_Cancel.Text = "Отмена";
-            this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.наГлавнуюToolStripMenuItem.Name = "наГлавнуюToolStripMenuItem";
+            this.наГлавнуюToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+            this.наГлавнуюToolStripMenuItem.Text = "На главную";
             // 
-            // textBox1
+            // продажаКнигToolStripMenuItem
             // 
-            this.textBox1.Location = new System.Drawing.Point(109, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.продажаКнигToolStripMenuItem.Name = "продажаКнигToolStripMenuItem";
+            this.продажаКнигToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.продажаКнигToolStripMenuItem.Text = "Продажа книг";
             // 
-            // textBox2
+            // статистикаToolStripMenuItem
             // 
-            this.textBox2.Location = new System.Drawing.Point(109, 242);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.статистикаToolStripMenuItem.Name = "статистикаToolStripMenuItem";
+            this.статистикаToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.статистикаToolStripMenuItem.Text = "Статистика";
             // 
-            // textBox3
+            // toolStrip1
             // 
-            this.textBox3.Location = new System.Drawing.Point(109, 190);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 4;
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addBtTool,
+            this.deleteBtTool,
+            this.toolStripSeparator1,
+            this.toExcelBtTool,
+            this.toolStripDropDownButton1,
+            this.toolStripSeparator2,
+            this.toolStripDropDownButton2,
+            this.currentListLbTool});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.ShowItemToolTips = false;
+            this.toolStrip1.Size = new System.Drawing.Size(800, 27);
+            this.toolStrip1.TabIndex = 1;
+            this.toolStrip1.Text = "toolStrip1";
             // 
-            // textBox4
+            // toolStripSeparator1
             // 
-            this.textBox4.Location = new System.Drawing.Point(109, 144);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 5;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
-            // textBox5
+            // toExcelBtTool
             // 
-            this.textBox5.Location = new System.Drawing.Point(109, 96);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 6;
+            this.toExcelBtTool.Name = "toExcelBtTool";
+            this.toExcelBtTool.Size = new System.Drawing.Size(0, 24);
             // 
-            // richTextBox1
+            // toolStripDropDownButton1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 314);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(363, 124);
-            this.richTextBox1.TabIndex = 7;
-            this.richTextBox1.Text = "";
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toExcelItTool});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(106, 24);
+            this.toolStripDropDownButton1.Text = "Выгрузить в";
             // 
-            // label1
+            // toExcelItTool
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 295);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "тут будут пожелания";
+            this.toExcelItTool.Name = "toExcelItTool";
+            this.toExcelItTool.Size = new System.Drawing.Size(152, 24);
+            this.toExcelItTool.Text = "Excel";
             // 
-            // dataGridView1
+            // toolStripDropDownButton2
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(458, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(330, 354);
-            this.dataGridView1.TabIndex = 9;
+            this.toolStripDropDownButton2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.orderBtTool,
+            this.orderPostBtTool});
+            this.toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
+            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(130, 24);
+            this.toolStripDropDownButton2.Text = "Список заказов";
             // 
-            // label2
+            // orderPostBtTool
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(279, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "справа список книг на заказ";
+            this.orderPostBtTool.Name = "orderPostBtTool";
+            this.orderPostBtTool.Size = new System.Drawing.Size(232, 24);
+            this.orderPostBtTool.Text = "Заказ поставщику";
+            this.orderPostBtTool.Click += new System.EventHandler(this.orderPostBtTool_Click);
+            // 
+            // orderBtTool
+            // 
+            this.orderBtTool.Name = "orderBtTool";
+            this.orderBtTool.Size = new System.Drawing.Size(232, 24);
+            this.orderBtTool.Text = "Заказ потенциальный";
+            this.orderBtTool.Click += new System.EventHandler(this.orderBtTool_Click);
+            // 
+            // addBtTool
+            // 
+            this.addBtTool.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.addBtTool.Image = ((System.Drawing.Image)(resources.GetObject("addBtTool.Image")));
+            this.addBtTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addBtTool.Name = "addBtTool";
+            this.addBtTool.Size = new System.Drawing.Size(80, 24);
+            this.addBtTool.Text = "Добавить";
+            // 
+            // deleteBtTool
+            // 
+            this.deleteBtTool.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.deleteBtTool.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtTool.Image")));
+            this.deleteBtTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.deleteBtTool.Name = "deleteBtTool";
+            this.deleteBtTool.Size = new System.Drawing.Size(69, 24);
+            this.deleteBtTool.Text = "Удалить";
+            // 
+            // currentListLbTool
+            // 
+            this.currentListLbTool.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.currentListLbTool.BackColor = System.Drawing.SystemColors.Control;
+            this.currentListLbTool.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.currentListLbTool.Font = new System.Drawing.Font("Segoe UI", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.currentListLbTool.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.currentListLbTool.Name = "currentListLbTool";
+            this.currentListLbTool.Size = new System.Drawing.Size(140, 24);
+            this.currentListLbTool.Text = "Заказ поставщику";
+            this.currentListLbTool.Click += new System.EventHandler(this.currentListLbTool_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
+            // 
+            // orderList
+            // 
+            this.orderList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.orderList.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.orderList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.orderList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.orderList.Location = new System.Drawing.Point(0, 51);
+            this.orderList.Name = "orderList";
+            this.orderList.Size = new System.Drawing.Size(800, 399);
+            this.orderList.TabIndex = 2;
             // 
             // OrderBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.btn_Cancel);
-            this.Controls.Add(this.btn_Order);
+            this.Controls.Add(this.orderList);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.navigationMenu);
+            this.MainMenuStrip = this.navigationMenu;
             this.Name = "OrderBooks";
             this.Text = "OrderBooks";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.navigationMenu.ResumeLayout(false);
+            this.navigationMenu.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,16 +226,22 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_Order;
-        private System.Windows.Forms.Button btn_Cancel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MenuStrip navigationMenu;
+        private System.Windows.Forms.ToolStripMenuItem наГлавнуюToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem продажаКнигToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem статистикаToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripLabel toExcelBtTool;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
+        private System.Windows.Forms.ToolStripMenuItem orderBtTool;
+        private System.Windows.Forms.ToolStripMenuItem orderPostBtTool;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem toExcelItTool;
+        private System.Windows.Forms.ToolStripButton addBtTool;
+        private System.Windows.Forms.ToolStripButton deleteBtTool;
+        private System.Windows.Forms.ToolStripLabel currentListLbTool;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.DataGridView orderList;
     }
 }

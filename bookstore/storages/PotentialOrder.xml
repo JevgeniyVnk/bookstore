@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Storage>
+  <Book name ="test1" price="test" count ="10" describtion ="oadhfheiopugfvbipdvgipuwehfo[iwehfoi[hewoigeh["/>
+  <Book name ="test2" price="test" count ="16" />
+  <Book name ="test3" price="test" count ="11" />
+  <Book name ="test" price="test" count ="1" />
+  <Book name ="test" price="test" count ="1" />
+
+  <Book name ="test" price="test" count ="1" />
+  <Book name ="test" price="test" count ="1" />
+  <Book name ="test" price="test" count ="1" />
+  <Book name ="test" price="test" count ="1" />
+  <Book name ="test" price="test" count ="1" />
+</Storage>
